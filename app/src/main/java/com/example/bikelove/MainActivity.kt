@@ -7,8 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.luxsofttest.navigation.NavRoutes
-import com.example.luxsofttest.ui.theme.MainTheme
+import com.example.bikelove.navigation.NavRoutes
+import com.example.bikelove.ui.authorization.AuthorizationScreen
+import com.example.bikelove.theme.MainTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
         NavHost(navController = navController, startDestination = NavRoutes.Authorization.route) {
             composable(NavRoutes.Authorization.route) {
-                //BankAccountScreen(navController)
+                AuthorizationScreen(navController)
             }
         }
     }

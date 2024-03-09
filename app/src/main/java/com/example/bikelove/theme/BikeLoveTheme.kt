@@ -1,4 +1,4 @@
-package com.example.luxsofttest.ui.theme
+package com.example.bikelove.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -42,18 +42,18 @@ object BikeLoveTheme {
 
     val shapes: BikeLoveShape
         @Composable
-        get() = LocalLuxsoftTestShape.current
+        get() = LocalBikeLoveTestShape.current
 }
 
-val LocalBikeLoveColors = staticCompositionLocalOf<BikeLoveColors> {
-    error("No colors provided")
+val LocalBikeLoveColors = staticCompositionLocalOf<BikeLoveColors>{
+    baseLightPalette
 }
 
 val LocalBikeLoveTypography = staticCompositionLocalOf<BikeLoveTypography> {
     error("No font provided")
 }
 
-val LocalLuxsoftTestShape = staticCompositionLocalOf<BikeLoveShape> {
+val LocalBikeLoveTestShape = staticCompositionLocalOf<BikeLoveShape> {
     error("No shapes provided")
 }
 

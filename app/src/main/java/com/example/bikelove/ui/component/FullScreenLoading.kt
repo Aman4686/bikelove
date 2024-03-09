@@ -8,8 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.luxsofttest.ui.theme.BikeLoveTheme
-import com.example.luxsofttest.ui.theme.MainTheme
+import com.example.bikelove.theme.BikeLoveTheme
+import com.example.bikelove.theme.MainTheme
 
 @Composable
 fun FullScreenLoading() {

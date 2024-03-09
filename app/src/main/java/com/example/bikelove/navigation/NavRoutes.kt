@@ -1,5 +1,6 @@
-//package com.example.luxsofttest.navigation
-//
-//sealed class NavRoutes(val route: String) {
-//    object Authorization : NavRoutes("authorization")
-//}
+package com.example.bikelove.navigation
+
+sealed class NavRoutes(val route: String) {
+    object Authorization : NavRoutes("authorization")
+    object ItemList : NavRoutes("itemList")
+}

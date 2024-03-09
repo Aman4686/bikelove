@@ -1,9 +1,10 @@
-package com.example.luxsofttest.ui.theme
+package com.example.bikelove.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -86,10 +87,22 @@ fun MainTheme(
         }
     )
 
+    val LocalBikeLoveColors = staticCompositionLocalOf<BikeLoveColors>{
+        colors
+    }
+
+    val LocalBikeLoveTypography = staticCompositionLocalOf<BikeLoveTypography> {
+        typography
+    }
+
+    val LocalBikeLoveTestShape = staticCompositionLocalOf<BikeLoveShape> {
+        shapes
+    }
+
     CompositionLocalProvider(
         LocalBikeLoveColors provides colors,
         LocalBikeLoveTypography provides typography,
-        LocalLuxsoftTestShape provides shapes,
+        LocalBikeLoveTestShape provides shapes,
         content = content
     )
 }

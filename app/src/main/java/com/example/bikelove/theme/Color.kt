@@ -1,4 +1,4 @@
-package com.example.luxsofttest.ui.theme
+package com.example.bikelove.theme
 
 import androidx.compose.ui.graphics.Color
 

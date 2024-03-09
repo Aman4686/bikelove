@@ -1,7 +1,12 @@
 package com.example.bikelove.cloud.authorization.model.login
 
+import com.google.gson.annotations.SerializedName
+
 data class LoginRequestBody(
+    @SerializedName("phone")
     val phone: String,
-    val email: String?,
-    val password: String
+    @SerializedName("password")
+    val password: String,
+    @SerializedName("email")
+    val email: String? = null,
 )

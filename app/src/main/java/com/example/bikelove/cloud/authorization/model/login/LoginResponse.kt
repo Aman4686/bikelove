@@ -11,30 +11,50 @@ data class LoginResponse(
 ) {
 
     data class User(
-        @SerializedName("firstName")
-        val firstName: String? = null,
-        @SerializedName("lastName")
-        val lastName: String? = null,
-        @SerializedName("patronymic")
-        val patronymic: String? = null,
-        @SerializedName("shopId")
-        val shopId: Int? = null,
-        @SerializedName("balance")
-        val balance: Int? = null,
-        @SerializedName("creditLimit")
-        val creditLimit: Int? = null,
         @SerializedName("id")
-        val id: String? = null,
+        var id: String? = null,
         @SerializedName("email")
-        val email: String? = null,
-        @SerializedName("phoneNumber")
-        val phoneNumber: String? = null,
+        var email: String? = null,
         @SerializedName("emailConfirmed")
-        val emailConfirmed: Boolean? = null,
+        var emailConfirmed: Boolean? = null,
+        @SerializedName("phoneNumber")
+        var phoneNumber: String? = null,
         @SerializedName("phoneNumberConfirmed")
-        val phoneNumberConfirmed: Boolean? = null,
-        @SerializedName("roles")
-        val roles: ArrayList<String> = arrayListOf()
+        var phoneNumberConfirmed: Boolean? = null,
+        @SerializedName("twoFactorEnabled")
+        var twoFactorEnabled: Boolean? = null,
+        @SerializedName("firstName")
+        var firstName: String? = null,
+        @SerializedName("lastName")
+        var lastName: String? = null,
+        @SerializedName("patronymic")
+        var patronymic: String? = null,
+        @SerializedName("shopId")
+        var shopId: Int? = null,
+        @SerializedName("isEmployee")
+        var isEmployee: Boolean? = null,
+        @SerializedName("bike")
+        var bike: String? = null,
+        @SerializedName("balance")
+        var balance: Int? = null,
+        @SerializedName("creditLimit")
+        var creditLimit: Int? = null,
+        @SerializedName("created")
+        var created: String? = null,
+        @SerializedName("updated")
+        var updated: String? = null,
+        @SerializedName("gender")
+        var gender: String? = null,
+        @SerializedName("birth")
+        var birth: String? = null,
+        @SerializedName("language")
+        var language: String? = null,
+        @SerializedName("lastInteraction")
+        var lastInteraction: String? = null,
+        @SerializedName("interactionFail")
+        var interactionFail: String? = null,
+        @SerializedName("unsolvedTasks")
+        var unsolvedTasks: Boolean? = null
     )
 
 }
