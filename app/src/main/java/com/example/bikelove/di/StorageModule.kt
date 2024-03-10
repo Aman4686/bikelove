@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.bikelove.cloud.authorization.AuthorizationConst
-import com.example.bikelove.storage.useCase.SharedPreferencesHelper
-import com.example.bikelove.storage.useCase.SharedPreferencesHelperImpl
+import com.example.bikelove.storage.useCase.AuthorizationSharedPreferences
+import com.example.bikelove.storage.useCase.AuthorizationSharedPreferencesImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +16,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class StorageModule {
-
     @Singleton
     @Named("authorization")
     @Provides
@@ -29,9 +28,7 @@ class StorageModule {
 
     @Singleton
     @Provides
-    fun provideSharedPreferencesHelper(sharedPreferences: SharedPreferences): SharedPreferencesHelper {
-        return SharedPreferencesHelperImpl(sharedPreferences)
+    fun provideSharedPreferencesHelper(@Named("authorization") sharedPreferences: SharedPreferences): AuthorizationSharedPreferences {
+        return AuthorizationSharedPreferencesImpl(sharedPreferences)
     }
-
-
 }

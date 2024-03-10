@@ -1,16 +1,13 @@
 package com.example.bikelove.base
 
 import com.example.bikelove.utils.ApiHandler
-import com.example.bikelove.utils.BaseErrorBody
-import com.example.bikelove.utils.NetworkResult
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
-import retrofit2.Response
 
 /**
  * Executes business logic synchronously or asynchronously using Coroutines.
  */
-abstract class UseCase<in P, R : Any, Error: BaseErrorBody>(private val coroutineDispatcher: CoroutineDispatcher): ApiHandler {
+abstract class UseCase<in P, R : Any>(private val coroutineDispatcher: CoroutineDispatcher): ApiHandler {
 
     /** Executes the use case asynchronously and returns a [Result].
      *
@@ -18,17 +15,14 @@ abstract class UseCase<in P, R : Any, Error: BaseErrorBody>(private val coroutin
      *
      * @param parameters the input parameters to run the use case with
      */
-    suspend operator fun invoke(parameters: P): NetworkResult<R> {
+    suspend operator fun invoke(parameters: P): R {
         return withContext(coroutineDispatcher) {
-                handleApi {
-                    execute(parameters)
-                }
+                execute(parameters)
             }
-
     }
     /**
      * Override this to set the code to be executed.
      */
     @Throws(RuntimeException::class)
-    protected abstract suspend fun execute(parameters: P): Response<R>
+    protected abstract suspend fun execute(parameters: P): R
 }

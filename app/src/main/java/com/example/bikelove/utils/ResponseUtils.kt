@@ -7,9 +7,9 @@ import okhttp3.ResponseBody
 
 object ResponseUtils {
 
-    inline fun <reified ERROR: BaseErrorBody> getErrorResponse(response: ResponseBody?): ERROR {
+    fun getErrorResponse(response: ResponseBody?): ErrorBody {
         val responseString = response?.string() ?: throw IllegalStateException("ErrorResponse body is null")
-        return Gson().fromJson(responseString, ERROR::class.java)
+        return Gson().fromJson(responseString, ErrorBody::class.java)
     }
     data class ErrorResponse(
         @SerializedName("status")

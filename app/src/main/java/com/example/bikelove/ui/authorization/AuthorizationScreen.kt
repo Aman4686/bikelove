@@ -35,6 +35,14 @@ fun AuthorizationScreen(
                             password = password
                         )
                     )
+                },
+                onRegistrationClicked = { phone, password ->
+                    viewModel.obtainEvent(
+                        AuthorizationViewEvent.Register(
+                            phone = phone,
+                            password = password
+                        )
+                    )
                 }
             )
         }
@@ -50,7 +58,7 @@ fun AuthorizationScreen(
         }
     }
 
-    LaunchedEffect(key1 = viewState, block = {
+    LaunchedEffect(key1 = Unit, block = {
         viewModel.obtainEvent(event = AuthorizationViewEvent.Initial)
     })
 }

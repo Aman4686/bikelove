@@ -1,13 +1,6 @@
 package com.example.bikelove.di
 
-import android.app.Application
-import android.content.Context
-import android.content.SharedPreferences
 import com.example.bikelove.BuildConfig
-import com.example.bikelove.cloud.authorization.AuthorizationAPI
-import com.example.bikelove.cloud.authorization.AuthorizationConst.SHARED_PREFERENCES_AUTHORIZATION_KEY
-import com.example.bikelove.storage.useCase.SharedPreferencesHelper
-import com.example.bikelove.storage.useCase.SharedPreferencesHelperImpl
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import dagger.Module
 import dagger.Provides
